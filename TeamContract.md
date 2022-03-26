@@ -1,5 +1,5 @@
 ## **Communication**
-   Team Meetings 
+   Team Meetings <br />
            We plan to meet weekly (dates are yet to be decided but most likely over weekend after communicating each member's availability through a shared group chat).
            Each meeting will be an hour long but can extend longer as needed for members to share progress updates and determine what progress we need to make to further finish our project.
            Meetings will be in person since we all live at ISR and are available for a long time.
@@ -15,11 +15,11 @@
            If any members feel that they are given an unequal say within the project, they can contact the assigned TA with complaints and inform the rest of the team so that we cna take steps to fix any issues.
 
 ## **Collaboration**
-   **Work Distribution**
-           Members can volunteer to take on tasks that they feel are more suited to their skillset and abilities. 
-           Each member is expected to have atleast one working task per week and is encouraged to do more if their time permits.
-           If any member has unexpected work during a week and is unable to finish the task they took on, they are expected to inform the group as soon as they are aware of their lack of time and are expected to finish it in tandem with other tasks in the following week.
-  **Time Commitment**
+   **Work Distribution** <br />
+           Members can volunteer to take on tasks that they feel are more suited to their skillset and abilities. <br />
+           Each member is expected to have atleast one working task per week and is encouraged to do more if their time permits. <br />
+           If any member has unexpected work during a week and is unable to finish the task they took on, they are expected to inform the group as soon as they are aware of their lack of time and are expected to finish it in tandem with other tasks in the following week. <br />
+  **Time Commitment** <br />
            Members are expected to spend somewhere from 3-4 hours per week. 
            We are all part of multiple RSO's that we are heavily engaged in and are part of the same CS 222 project group so it is inevitable that we will have other time commitments.
            If any member has unexpected work during a week and is unable to finish the task they took on, they are expected to inform the group as soon as they are aware of their lack of time and are expected to finish it in tandem with other tasks in the following week.
@@ -31,5 +31,5 @@
           If there is any fundamental disagreements regarding the project, members will attempt to talk it out respectfully in front of the third group member or course staff as a moderator and will only inform course staff officially if the problem becomes severe.
           
 ## **Signatures**
-  Arul Verma
+  Arul Verma <br />
   Nihal Saxena
