@@ -6,8 +6,8 @@
        Members will rotate who will take meeting minutes and can request someone else to cover if needed. <br />
 
 ## **Assistance**
-      Teammates can contact each other through a shared message group chat or even through personal message since we all have each other's phone numbers. <br />
-      The expectation is that everyone should respond within an hour or two or be able to provide a reasonable explanation as to why they were unavailable. <br />
+      Teammates can contact each other through a shared message group chat or even through personal message since we all have each other's phone numbers. 
+      The expectation is that everyone should respond within an hour or two or be able to provide a reasonable explanation as to why they were unavailable. 
 
 ## **Respect**
       An effective team needs to have an environment which encourages open expression of ideas. How will you ensure that every member has an opportunity to speak and, more importantly, that every member will actively listen and engage with the thoughts of others?
