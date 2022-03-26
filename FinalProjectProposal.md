@@ -28,11 +28,9 @@ N is the number of airports and M is the number of edges.
 
 Our Breath First Search will be O(N) in both memory and in runtime as it will have a queue to store the nodes we are currently visiting and the worst case is that one airport has flights to all other airports hence being O(N). The runtime will also be O(N) since we will only traverse to nodes we have not visited before and hus in the worst case will visit every airport atleast once.
 
-Our Dijkstra algorithm will be O(O(M + N * log(N)) in runtime and O(N) in memory as we will be using a priority queue to implement our algorithm and the worst case is that one airport has flights to every other airport hence being O(N) in memory.
+Our Dijkstra algorithm will be O(M + N * log(N)) in runtime and O(N) in memory as we will be using a priority queue to implement our algorithm and the worst case is that one airport has flights to every other airport hence being O(N) in memory.
 
 Our Iterative Deeping Depth First Search will be O(B^D) in runtime, where B is the branching factor and D is the depth of the goal. In memory, our algorithm will be O(D).
 
 ## **Timeline:**
-1. blah
-2. blah
-3. blah
+1. 
