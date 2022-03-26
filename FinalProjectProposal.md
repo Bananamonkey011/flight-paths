@@ -13,12 +13,15 @@ We will parse the data by reading line by line and separating values at each com
 We will store our data using a graph. We will store each airport as a node within our graph and create edges between airports that have a flight connection. We expected the data storage to be O(N+M) where N is the number of airports and M is the number of flights. 
 
 ## **Graph Algorithms:**
+We will use a Breath First Search, a Dijkstra path algorithm, and a Delta Stepping SSSP algorithm.
 
 #### Function Inputs
-blah blah blah
+The expected inputs for all three algorithms are a starting airport node and the destination airport node. 
+
+For the algorithms, we will have to convert the airports into nodes and the flights into edges. We will do this by converting each airport into a node containing it's latitudinal and longitudinal position. We will then create edges between flights. Edges will be weighted on the number of flights with a minimal number of stops and redirects between the two airports. Finally, lengths of the flight path will be calculated by finding the shortest path and finding the distance by using latitude and longitudes given in the first dataset.
 
 #### Function Outputs
-blah blah blah
+The function output will be an integer that will contain the shortest distance from the starting airport to the destination airport. 
 
 #### Function Efficiency
 blah blah blah
