@@ -1,7 +1,7 @@
 # **Final Project - Nihal S, Arul V, Manan J**
 
 ## **Leading Question:**
-Given a dataset of airports and their distances from each other, as well as the flights taken in between airports, can we produce an algorithm to determine the shortest path between any two airports. We hope to learn traversal algorithms and graph theory from the implementation of graph traversal algorithms on a graph made of airports as nodes.
+Given a dataset of airports and their distances from each other, as well as the flights taken in between airports, can we produce an algorithm that takes in a user's current airport and their desired destination to determine the shortest path they have to take? We hope to learn traversal algorithms and graph theory from the implementation of graph traversal algorithms on a graph made of airports as nodes.
 
 ## **Dataset Acquisition and Processing:**
 #### Data Format
@@ -10,7 +10,7 @@ The dataset we are using is OpenFlights which contains over 10,000 airports, tra
 We will parse the data by reading line by line and separating values at each comma. We know exactly which data is in what column so we simply need to format our code to categorize data based on that. We will check if our data is error free by crossreferencing outlier data points with distance calculated using the longitude and latitude positions given within the first dataset. We will check for missing entries by looking for data points with just spaces, special characters, and/or no value stored. If a data point has incomplete data, it will be ignored and will not be used due to our inability to correct the data ourselves and its unreliability as a datapoint. 
 
 #### Data Storage
-blah blah blah
+We will store our data using a graph. We will store each airport as a node within our graph and create edges between airports that have a flight connection. We expected the data storage to be O(N+M) where N is the number of airports and M is the number of flights. 
 
 ## **Graph Algorithms:**
 
