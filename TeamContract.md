@@ -26,9 +26,9 @@
            If time becomes a recurring issue for any member in the group, first the rest of the group will inform the TA, then if it continues to be an issue, the TA will be informed about the problem. <br />
            
 ## **Conflict Resolution**
-     The group will follow a 3 strike approach to issues. If the group majority agrees that there is a problem with the third member, the third member will be informed and will be given 3 attempts to correct their behavior. <br />
-     If the group member continues to be unable to resolve their problem, after 3 different warnings, the TA will be informed regarding the issue and hopefully some resolution can be reached through there. <br />
-     If there is any fundamental disagreements regarding the project, members will attempt to talk it out respectfully in front of the third group member or course staff as a moderator and will only inform course staff officially if the problem becomes severe. <br />
+     The group will follow a 3 strike approach to issues. If the group majority agrees that there is a problem with the third member, the third member will be informed and will be given 3 attempts to correct their behavior. 
+     If the group member continues to be unable to resolve their problem, after 3 different warnings, the TA will be informed regarding the issue and hopefully some resolution can be reached through there. 
+     If there is any fundamental disagreements regarding the project, members will attempt to talk it out respectfully in front of the third group member or course staff as a moderator and will only inform course staff officially if the problem becomes severe. 
           
 ## **Signatures**
   Arul Verma <br />
