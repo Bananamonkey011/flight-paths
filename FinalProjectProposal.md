@@ -1,11 +1,11 @@
 # **Final Project - Nihal S, Arul V, Manan J**
 
 ## **Leading Question:**
-Given a dataset of airports and their distances from each other, as well as the flights taken in between airports, can we produce an algorithm that takes in a user's current airport and their desired destination to determine the shortest path they have to take? We hope to learn traversal algorithms and graph theory from the implementation of graph traversal algorithms on a graph made of airports as nodes.
+Given a dataset of airports and their distances from each other, as well as the flights taken in between airports, can we produce an algorithm that takes in a user's current airport and their desired destination to determine the shortest path they have to take? We hope to learn traversal algorithms and graph theory by implementing graph traversal algorithms on a graph made of airports as nodes.
 
 ## **Dataset Acquisition and Processing:**
 #### Data Format
-The dataset we are using is OpenFlights which contains over 10,000 airports, train stations, ferry stations, and other transportation centers. The second dataset we are using has 67663 routes between 3321 airports on 548 airlines spanning the globe which we will use to create edges between our graph nodes. The data is stored as a csv file. We plan to only use the airport subset of the OpenFlights dataset containing port locations to augment the creation of our graph of flights and their start port to end port using the second dataset indicated. This way we can create a graph that spans across the globe and maps out all the paths of airport travel.
+The dataset we are using is OpenFlights which contains over 10,000 airports, train stations, ferry stations, and other transportation centers. The second dataset we are using has 67663 routes between 3321 airports on 548 airlines spanning the globe which we will use to create edges between our graph nodes. The data is stored as a CSV file. We plan to only use the airport subset of the OpenFlights dataset containing airport locations to augment the creation of our graph of flights and their start port to end port using the second dataset indicated. This way we can create a graph that spans across the globe and maps out all the paths of airport travel.
 #### Data Correction
 We will parse the data by reading line by line and separating values at each comma. We know exactly which data is in what column so we simply need to format our code to categorize data based on that. We will check if our data is error free by crossreferencing outlier data points with distance calculated using the longitude and latitude positions given within the first dataset. We will check for missing entries by looking for data points with just spaces, special characters, and/or no value stored. If a data point has incomplete data, it will be ignored and will not be used due to our inability to correct the data ourselves and its unreliability as a datapoint. 
 
@@ -33,9 +33,9 @@ Our Dijkstra algorithm will be O(M + N * log(N)) in runtime and O(N) in memory a
 Our Iterative Deeping Depth First Search will be O(B^D) in runtime, where B is the branching factor and D is the depth of the goal. In memory, our algorithm will be O(D).
 
 ## **Timeline:**
-Week 1: Acquire and clean data to create final project csv file for both airports and flights.
-Week 2: Reading about Dijkstra's shortest path algorithm and Iterative Deepening Depth First Search. We will also implement the creation of the graph code.
-Week 3: Creating our BFS and finishing the implementation of the creation of the graph code as well as preliminary testing.
-Week 4: Creating our Dijkstra algorithm and our Iterative Deepening DFS algorithm.
-Week 5: Finishing the creation of our Dijkstra and Iterative Deepening DFS algorithm and putting it all together.
-Week 6: Final testing and creation of porject research paper.
+1. Week 1: Acquire and clean data to create final project csv file for both airports and flights.
+2. Week 2: Reading about Dijkstra's shortest path algorithm and Iterative Deepening Depth First Search. We will also implement the creation of the graph code.
+3. Week 3: Creating our BFS and finishing the implementation of the creation of the graph code as well as preliminary testing.
+4. Week 4: Creating our Dijkstra algorithm and our Iterative Deepening DFS algorithm.
+5. Week 5: Finishing the creation of our Dijkstra and Iterative Deepening DFS algorithm and putting it all together.
+6. Week 6: Final testing and creation of porject research paper.
