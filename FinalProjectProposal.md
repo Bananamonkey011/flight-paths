@@ -33,4 +33,9 @@ Our Dijkstra algorithm will be O(M + N * log(N)) in runtime and O(N) in memory a
 Our Iterative Deeping Depth First Search will be O(B^D) in runtime, where B is the branching factor and D is the depth of the goal. In memory, our algorithm will be O(D).
 
 ## **Timeline:**
-1. 
+Week 1: Acquire and clean data to create final project csv file for both airports and flights.
+Week 2: Reading about Dijkstra's shortest path algorithm and Iterative Deepening Depth First Search. We will also implement the creation of the graph code.
+Week 3: Creating our BFS and finishing the implementation of the creation of the graph code as well as preliminary testing.
+Week 4: Creating our Dijkstra algorithm and our Iterative Deepening DFS algorithm.
+Week 5: Finishing the creation of our Dijkstra and Iterative Deepening DFS algorithm and putting it all together.
+Week 6: Final testing and creation of porject research paper.
