@@ -13,7 +13,7 @@ We will parse the data by reading line by line and separating values at each com
 We will store our data using a graph. We will store each airport as a node within our graph and create edges between airports that have a flight connection. We expected the data storage to be O(N+M) where N is the number of airports and M is the number of flights. 
 
 ## **Graph Algorithms:**
-We will use a Breath First Search, a Dijkstra path algorithm, and a Delta Stepping SSSP algorithm.
+We will use a Breath First Search, a Dijkstra path algorithm, and an Iterative Deepening Depth First Search.
 
 #### Function Inputs
 The expected inputs for all three algorithms are a starting airport node and the destination airport node. 
@@ -21,10 +21,16 @@ The expected inputs for all three algorithms are a starting airport node and the
 For the algorithms, we will have to convert the airports into nodes and the flights into edges. We will do this by converting each airport into a node containing it's latitudinal and longitudinal position. We will then create edges between flights. Edges will be weighted on the number of flights with a minimal number of stops and redirects between the two airports. Finally, lengths of the flight path will be calculated by finding the shortest path and finding the distance by using latitude and longitudes given in the first dataset.
 
 #### Function Outputs
-The function output will be an integer that will contain the shortest distance from the starting airport to the destination airport. 
+The function output will be an integer that will contain the shortest distance from the starting airport to the destination airport, which we will return to the user.
 
 #### Function Efficiency
-blah blah blah
+N is the number of airports and M is the number of edges. 
+
+Our Breath First Search will be O(N) in both memory and in runtime as it will have a queue to store the nodes we are currently visiting and the worst case is that one airport has flights to all other airports hence being O(N). The runtime will also be O(N) since we will only traverse to nodes we have not visited before and hus in the worst case will visit every airport atleast once.
+
+Our Dijkstra algorithm will be O(O(M + N * log(N)) in runtime and O(N) in memory as we will be using a priority queue to implement our algorithm and the worst case is that one airport has flights to every other airport hence being O(N) in memory.
+
+Our Iterative Deeping Depth First Search will be O(B^D) in runtime, where B is the branching factor and D is the depth of the goal. In memory, our algorithm will be O(D).
 
 ## **Timeline:**
 1. blah
