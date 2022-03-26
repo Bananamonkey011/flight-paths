@@ -1,5 +1,6 @@
 ## **Communication**
-   Team Meetings <br />
+   **Team Meetings** <br />
+   <br />
            We plan to meet weekly (dates are yet to be decided but most likely over weekend after communicating each member's availability through a shared group chat). <br />
            Each meeting will be an hour long but can extend longer as needed for members to share progress updates and determine what progress we need to make to further finish our project. <br />
            Meetings will be in person since we all live at ISR and are available for a long time. <br />
