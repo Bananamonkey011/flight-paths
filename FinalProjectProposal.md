@@ -38,4 +38,4 @@ Our Iterative Deeping Depth First Search will be O(B^D) in runtime, where B is t
 - Week 3: Creating our BFS and finishing the implementation of the creation of the graph code as well as preliminary testing.
 - Week 4: Creating our Dijkstra algorithm and our Iterative Deepening DFS algorithm.
 - Week 5: Finishing the creation of our Dijkstra and Iterative Deepening DFS algorithm and putting it all together.
-- Week 6: Final testing and creation of porject research paper.
+- Week 6: Final testing and creation of project research paper.
