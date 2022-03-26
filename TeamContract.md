@@ -1,10 +1,9 @@
 ## **Communication**
    **Team Meetings** <br />
-   <br />
-           We plan to meet weekly (dates are yet to be decided but most likely over weekend after communicating each member's availability through a shared group chat). <br />
-           Each meeting will be an hour long but can extend longer as needed for members to share progress updates and determine what progress we need to make to further finish our project. <br />
-           Meetings will be in person since we all live at ISR and are available for a long time. <br />
-           Members will rotate who will take meeting minutes and can request someone else to cover if needed. <br />
+       We plan to meet weekly (dates are yet to be decided but most likely over weekend after communicating each member's availability through a shared group chat). <br />
+       Each meeting will be an hour long but can extend longer as needed for members to share progress updates and determine what progress we need to make to further finish our project. <br />
+       Meetings will be in person since we all live at ISR and are available for a long time. <br />
+       Members will rotate who will take meeting minutes and can request someone else to cover if needed. <br />
 
 ## **Assistance**
       Teammates can contact each other through a shared message group chat or even through personal message since we all have each other's phone numbers. <br />
@@ -12,8 +11,8 @@
 
 ## **Respect**
       An effective team needs to have an environment which encourages open expression of ideas. How will you ensure that every member has an opportunity to speak and, more importantly, that every member will actively listen and engage with the thoughts of others?
-           We all will be given a set amount of period during each meeting to express our opinion regarding the progression of the project and our vision for its completion and what steps are necessary to reach that.
-           If any members feel that they are given an unequal say within the project, they can contact the assigned TA with complaints and inform the rest of the team so that we cna take steps to fix any issues.
+      We all will be given a set amount of period during each meeting to express our opinion regarding the progression of the project and our vision for its completion and what steps are necessary to reach that.
+      If any members feel that they are given an unequal say within the project, they can contact the assigned TA with complaints and inform the rest of the team so that we cna take steps to fix any issues.
 
 ## **Collaboration**
    **Work Distribution** <br />
