@@ -11,6 +11,7 @@ class Graph {
     public:
         Graph();
         Graph(std::string file);
+        void AddEdges(std::string file);
     private:
-        std::set<Node> visited;
+        std::set<Node> points;
 };
