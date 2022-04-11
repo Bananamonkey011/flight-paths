@@ -18,7 +18,7 @@ We will use a Breath First Search, a Dijkstra path algorithm, and an Iterative D
 #### Function Inputs
 The expected inputs for all three algorithms are a starting airport node and the destination airport node. 
 
-For the algorithms, we will have to convert the airports into nodes and the flights into edges. We will do this by converting each airport into a node containing it's latitudinal and longitudinal position. We will then create edges between flights. Edges will be weighted on the number of flights with a minimal number of stops and redirects between the two airports. Finally, lengths of the flight path will be calculated by finding the shortest path and finding the distance by using latitude and longitudes given in the first dataset.
+For the algorithms, we will have to convert the airports into nodes and the flights into edges. We will do this by converting each airport into a node containing it's latitudinal and longitudinal position. We will then create edges between flights. Edges will be weighted on the distance between the two airports using the longitude and latitutde of the airport locations to determine the distance between the airport locations. Finally, lengths of the flight path will be calculated by finding the shortest path and finding the distance by using latitude and longitudes given in the first dataset.
 
 #### Function Outputs
 The function output will be an integer that will contain the shortest distance from the starting airport to the destination airport, which we will return to the user.
