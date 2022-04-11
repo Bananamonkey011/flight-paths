@@ -26,7 +26,7 @@ Our goals for this week was to create our Graph Class that would store all our n
 
 **Nihal:** This week, I unfortunately was hit with COVID-19, and I had to spend the majority of the week recovering and tending to my own health. However, I was still able to make some progress on the Dijstra algorithm and gained a stronger conceptual understanding of what this algorithm requires from us. I started coding it, but I was not yet able to produce enough to push to the GitHub. My hope is to finish up the algorithm by next Sunday, April 17th.
 
-**Manan:** Updated the Node class to include more data.
+**Manan:** Finished the Node class to include complete set of data we deemed relevant. Also included a map of Nodes to distances to keep track of connected airports and the distance of route.
 
 **Arul:** Created Graph Class and added file reading functionality to read from airports.dat.
 
