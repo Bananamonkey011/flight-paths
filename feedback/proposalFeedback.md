@@ -1,15 +1,15 @@
 ### Grade
-Not Yet Competent (70%)
+Competent (90%)
 
-Please resubmit asap.
+(Grade includes 10% penalty)
 ### Comments
-One major flaw in Leading Question, with two minor flaws in Algorithms and Datasets.
+Well written proposal with details. 
 
 **Leading Question**
-The leading question does not specify which datasets and algorithms would be used to achieve the goal. 
+The leading question is clear. 
 
 **Dataset**
-The dataset is not well specified (what is "second dataset"?). You have also not specified the distance metric/algorithm between any two coordinate points. 
+The datasets are clears. (Links to the datasets would be preferable.) 
 
 **Algorithm**
-The algorithms are well described, although the complexity for Dijkstra mentioned in the proposal is achieved with Fibonacci heap. You should analyze what complexity you would reasonably achieve.
+The algorithms are well described.
