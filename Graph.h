@@ -13,5 +13,5 @@ class Graph {
         Graph(std::string file);
         void AddEdges(std::string file);
     private:
-        std::set<Node> points;
+        std::map<int,Node> points;
 };
