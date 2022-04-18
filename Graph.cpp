@@ -11,6 +11,7 @@ Graph::Graph(std::string file)
 {
     string datapath = "airports.dat";
     fstream datafile(datapath);
+    int count = 0;
     while(datafile.is_open() && datafile.good())
     {
         string idx, name, loc, country, IATA, ICAO, lat, lon, alt, temp;
@@ -31,12 +32,11 @@ Graph::Graph(std::string file)
 
         // create node using given information
         Node n = Node(stoi(idx), IATA, ICAO, stoi(lat), stoi(lon), stoi(alt));
-        points.insert(std::make_pair(stoi(idx), n));
+        graph.insert(std::make_pair(stoi(idx), n));
     }
-
 }
 
-void Graph::AddEdges(std::string file){
+void Graph::AddEdges(std::string file) {
     string path = "routes.dat";
     fstream datafile(path);
     while(datafile.is_open() && datafile.good())
@@ -52,7 +52,8 @@ void Graph::AddEdges(std::string file){
         getline(datafile, stops, ',');
         getline(datafile, equip);
 
-        this->points.find(stoi(sap_id));
-        
+        this->graph.find(stoi(sap_id));
     }
 }
+
+// std::map<int, Node> Graph::getGraph() { return graph; }

@@ -2,6 +2,7 @@
 
 #include <map>
 #include <set>
+#include <vector>
 #include <string>
 #include "Node.h"
 
@@ -12,6 +13,7 @@ class Graph {
         Graph();
         Graph(std::string file);
         void AddEdges(std::string file);
+        // std::map<int, Node> getGraph();
     private:
-        std::map<int,Node> points;
+        std::map<int, Node> graph;
 };

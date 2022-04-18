@@ -17,7 +17,7 @@ class Node {
         double lat_;
         double long_;
         int alt_;
-        map<Node*, double> airports_;
+        map<Node*, double> neighbors;
         
         //idt we need more than these
     public:

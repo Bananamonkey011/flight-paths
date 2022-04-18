@@ -25,5 +25,5 @@ Node::Node(int id, /*string name, string city, string country,*/ string IATA, st
 }
 
 void Node::addAirport(Node* a, double d){
-    airports_[a] = d;
+    neighbors[a] = d;
 }
