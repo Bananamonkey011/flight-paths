@@ -1,10 +1,6 @@
 #include "Node.h"
 
 Node::Node() {
-    id_ = 0;
-    // name_ = "";
-    // city_ = "";
-    // country_ = "";
     IATA_ = "";
     ICAO_ = "";
     lat_ = 0;
@@ -12,11 +8,7 @@ Node::Node() {
     alt_ = 0;
 }
 
-Node::Node(int id, /*string name, string city, string country,*/ string IATA, string ICAO, double lat, double longi, int alt){
-    id_ = id;
-    // name_ = name;
-    // city_ = city;
-    // country_ = country;
+Node::Node(int id, string IATA, string ICAO, double lat, double longi, int alt){
     IATA_ = IATA;
     ICAO_ = ICAO;
     lat_ = lat;
@@ -24,6 +16,4 @@ Node::Node(int id, /*string name, string city, string country,*/ string IATA, st
     alt_ = alt;
 }
 
-void Node::addAirport(Node* a, double d){
-    neighbors[a] = d;
-}
+void Node::addAirport(Node* a, double d) { neighbors[a] = d; }
