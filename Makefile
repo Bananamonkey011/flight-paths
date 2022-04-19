@@ -1,16 +1,42 @@
 CXX=clang++
-INCLUDES=-Iinclude/
-CXXFLAGS=-std=c++20 -g
+INCLUDES=-Iincludes/
+CXXFLAGS=-std=c++20 -g -fstandalone-debug -Wall -Wextra -Werror -pedantic $(INCLUDES)
 
 exec: bin/exec
-test: bin/tests
+tests: bin/tests
 
-bin/exec: main.cpp ./src/Graph.cpp ./src/Graph.h ./src/Node.cpp ./src/Node.h
-	$(CXX) $(CXXFLAGS) $(INCLUDES) $^ -o $@
-clean: 
-	rm -rf bin/*
+bin/exec: src/Graph.cc src/Node.cc  src/Graph.h src/Node.h
+	$(CXX) $(CXXFLAGS) src/Graph.cc src/Node.cc -o $@
 
-.DEFAULT: exec
+bin/tests: ./tests/unitTests.cc src/Graph.cc src/Node.cc src/Graph.h src/Node.h
+	$(CXX) $(CXXFLAGS) ./tests/unitTests.cc src/Graph.cc -o $@
+
+
+.DEFAULT_GOAL := exec
+.PHONY: clean exec tests
+
+clean:
+	rm -fr bin/* 
+
+
+########
+
+
+# CXX=clang++
+# INCLUDES=-Iinclude/
+# CXXFLAGS=-std=c++20 -g
+
+# exec: bin/exec
+# test: bin/tests
+
+# bin/exec: main.cc ./src/Graph.cc ./src/Graph.h ./src/Node.cc ./src/Node.h
+# 	$(CXX) $(CXXFLAGS) $(INCLUDES) src/Graph.cc src/Node.cc -o $@
+# clean: 
+# 	rm -rf bin/*
+
+# .DEFAULT: exec
+
+# #######
 
 # CXX=clang++
 # INCLUDES=-Iincludes/

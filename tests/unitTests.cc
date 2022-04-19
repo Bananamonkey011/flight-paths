@@ -1,11 +1,11 @@
-// #define CATCH_CONFIG_MAIN
+#define CATCH_CONFIG_MAIN
 #include "../cs225/catch/catch.hpp"
-#include "../Node.h"
-#include "../Graph.h"
+#include "../src/Node.h"
+#include "../src/Graph.h"
 #include <math.h> 
 
 bool dist(double d1, double d2) {
-    return fabs(d1-d2) < 50
+    return fabs(d1-d2) < 50;
 }
 
 TEST_CASE("test_addAirports") {
