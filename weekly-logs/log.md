@@ -36,19 +36,16 @@ Unfortunatly, the majority of our group was hit with midterms this week, and wit
 We hope to add in functionality to create edges into our Graph class and to try to implement a simple BFS on our created graphs.
 
 ## Week of 04/10 - 04/17
-
 ### Goals: 
-This week, our primary goal was to finish the 
+Our goals for this week was to finish our graph class, implement a traversal using our previous research, and to test our code by making test cases and a makefile and then running our code.
 
 ### Progress:
 
-**Nihal:** This week, I unfortunately was hit with COVID-19, and I had to spend the majority of the week recovering and tending to my own health. However, I was still able to make some progress on the Dijstra algorithm and gained a stronger conceptual understanding of what this algorithm requires from us. I started coding it, but I was not yet able to produce enough to push to the GitHub. My hope is to finish up the algorithm by next Sunday, April 17th.
-
-**Manan:** Finished the Node class to include complete set of data we deemed relevant. Also included a map of Nodes to distances to keep track of connected airports and the distance of route.
-
-**Arul:** Created Graph Class and added file reading functionality to read from airports.dat.
+This week, all three of us met up to work together on the code. We liveshared the code on Manan's computer and worked on finishing the Graph Class, the makefile, and the test cases. We were able to finish an implementation of the Dijkstra that we were able to test rudimentarily on online compilers. However, when we tried to test locally on our locally created test cases, we ran into problems since we didn't have experience making a Makefile.
 
 ### Problems: 
-Unfortunatly, the majority of our group was hit with midterms this week, and with Nihal in quarantine housing for the entire week due to COVID, most of our time had to be spent researching instead of coding.
+We implemented a Dijkstra algorithm rather than a BFS since we were not sure how to create a BFS that would work on a weighted graph and how the algorithm would differ from a Dijkstra's algorithm. We also were not able to create a Makefile sepite working on it all weekend so we were not able to test our code locally with our test cases (and thus cannot validate whether our code is correct).
+
 ### Next Weeks Plans:
-We hope to add in functionality to create edges into our Graph class and to try to implement a simple BFS on our created graphs.
+We hope to be done with our Makefile and to have implemented our BFS traversal code. We also hope to fully debug any issues our Dijkstra may have (unknown at the moment since we weren't able to extensively test) and to test edge cases with our test cases. We hope to make our test cases more robust and to have the test cases all our functions.
+
