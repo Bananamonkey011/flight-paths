@@ -14,6 +14,7 @@
         "unordered_map": "cpp",
         "algorithm": "cpp",
         "map": "cpp",
-        "__locale": "cpp"
+        "__locale": "cpp",
+        "queue": "cpp"
     }
 }

@@ -15,12 +15,14 @@ using namespace std;
 class Graph {
 public:
     Graph();
-    Graph(std::string file);
-    void AddEdges(std::string file);
-    vector<Node*> Dijkstra(int depart_id, int arrival_id);
+    Graph(string file);
+    void AddEdges();
+    void AddEdges(string file);
+    double Dijkstra(int depart_id, int arrival_id);
 
+    map<int, Node*>& getGraph();
 
 private:
-    map<int, Node *> graph;
+    map<int, Node*> graph;
     double distance(Node* a1, Node* a2);
 };

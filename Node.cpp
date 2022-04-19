@@ -8,7 +8,7 @@ Node::Node() {
     alt_ = 0;
 }
 
-Node::Node(int id, string IATA, string ICAO, double lat, double longi, int alt){
+Node::Node(int id, string IATA, string ICAO, double lat, double longi, int alt) {
     IATA_ = IATA;
     ICAO_ = ICAO;
     lat_ = lat;
@@ -16,4 +16,4 @@ Node::Node(int id, string IATA, string ICAO, double lat, double longi, int alt){
     alt_ = alt;
 }
 
-void Node::addAirport(Node* a, double d) { neighbors[a] = d; }
+void Node::addAirport(Node* a, double d) { if(neighbors.find(a) == neighbors.end()) neighbors[a] = d; }
