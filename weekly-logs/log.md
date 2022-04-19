@@ -52,3 +52,19 @@ This week, our primary goal was to finish the
 Unfortunatly, the majority of our group was hit with midterms this week, and with Nihal in quarantine housing for the entire week due to COVID, most of our time had to be spent researching instead of coding.
 ### Next Weeks Plans:
 We hope to add in functionality to create edges into our Graph class and to try to implement a simple BFS on our created graphs.
+
+
+## Week of 04/11 - 04/18
+### Goals: 
+Our goals for this week was to finish our graph class, implement a traversal using our previous research, and to test our code by making test cases and a makefile and then running our code.
+
+### Progress:
+
+This week, all three of us met up to work together on the code. We liveshared the code on Manan's computer and worked on finishing the Graph Class, the makefile, and the test cases. We were able to finish an implementation of the Dijkstra that we were able to test rudimentarily on online compilers. However, when we tried to test locally on our locally created test cases, we ran into problems since we didn't have experience making a Makefile.
+
+### Problems: 
+We implemented a Dijkstra algorithm rather than a BFS since we were not sure how to create a BFS that would work on a weighted graph and how the algorithm would differ from a Dijkstra's algorithm. We also were not able to create a Makefile sepite working on it all weekend so we were not able to test our code locally with our test cases (and thus cannot validate whether our code is correct).
+
+### Next Weeks Plans:
+We hope to be done with our Makefile and to have implemented our BFS traversal code. We also hope to fully debug any issues our Dijkstra may have (unknown at the moment since we weren't able to extensively test) and to test edge cases with our test cases. We hope to make our test cases more robust and to have the test cases all our functions.
+
