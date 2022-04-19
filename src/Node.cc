@@ -1,6 +1,7 @@
 #include "Node.h"
 
 Node::Node() {
+    id_ = 0;
     IATA_ = "";
     ICAO_ = "";
     lat_ = 0;
@@ -9,6 +10,7 @@ Node::Node() {
 }
 
 Node::Node(int id, string IATA, string ICAO, double lat, double longi, int alt) {
+    id_ = id;
     IATA_ = IATA;
     ICAO_ = ICAO;
     lat_ = lat;
