@@ -9,8 +9,8 @@ tests: bin/tests
 bin/exec: ./main.cpp ./Graph.h ./Graph.cpp ./Node.h ./Node.cpp 
 	$(CXX) $(CXXFLAGS) $(CXXEXTRAS) $(INCLUDES) ./main.cpp ./Graph.cpp ./Node.cpp -o ./bin/exec
 
-# bin/tests: tests/unitTests.cpp Graph.h Graph.cpp Node.h Node.cpp
-# 	# $(CXX) $(CXXFLAGS) $(CXXEXTRAS) $(INCLUDES) tests/unitTests.ccp Graph.cpp Node.cpp -o $@
+bin/tests: tests/unitTests.cpp Graph.h Graph.cpp Node.h Node.cpp
+	# $(CXX) $(CXXFLAGS) $(CXXEXTRAS) $(INCLUDES) tests/unitTests.ccp Graph.cpp Node.cpp -o $@
 
 .DEFAULT_GOAL := exec
 .PHONY: clean exec tests
