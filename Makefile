@@ -9,15 +9,14 @@ bin/exec: ./main.cc src/Graph.cc src/Node.cc  src/Graph.h src/Node.h
 	$(CXX) $(CXXFLAGS) ./main.cc src/Graph.cc src/Node.cc -o $@
 
 bin/tests: ./tests/unitTests.cc cs225/catch/catch.hpp src/Graph.cc src/Node.cc src/Graph.h src/Node.h
-	$(CXX) $(CXXFLAGS) ./tests/unitTests.cc src/Graph.cc -o $@
+	$(CXX) $(CXXFLAGS) ./tests/unitTests.cc src/Graph.cc src/Node.cc -o $@
 
 
 .DEFAULT_GOAL := exec
 .PHONY: clean exec tests
 
 clean:
-	rm -fr bin/* 
-
+	rm -fr bin/*
 
 ########
 
@@ -88,12 +87,12 @@ clean:
 # # 	rm -fr bin/*
 
 # # Executable names:
-# # EXE = 
-# # TEST = test
+# EXE = 
+# TEST = test
 
-# # Add all object files needed for compiling:
-# # EXE_OBJ = main.o
-# # OBJS = Graph.o main.o
+# Add all object files needed for compiling:
+# EXE_OBJ = main.o
+# OBJS = Graph.o main.o
 
-# # Use the cs225 makefile template:
+# Use the cs225 makefile template:
 # include cs225/make/cs225.mk
