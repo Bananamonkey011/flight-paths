@@ -2,7 +2,7 @@
 #include <queue>
 using namespace std;
 
-Graph::Graph() {
+Graph::Graph() { // TODO(): HANDLE INCORRECT DATA
     string datapath = "airports.dat";
     fstream datafile(datapath);
     while (datafile.is_open() && datafile.good()) {
