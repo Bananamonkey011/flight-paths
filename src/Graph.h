@@ -19,6 +19,8 @@ public:
     void AddEdges();
     void AddEdges(string file);
     double Dijkstra(int depart_id, int arrival_id);
+    Node* getNode(int key);
+    bool hasNode(int key);
 
     map<int, Node*>& getGraph();
 

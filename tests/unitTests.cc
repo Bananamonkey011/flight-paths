@@ -1,8 +1,15 @@
 #define CATCH_CONFIG_MAIN
 #include "../cs225/catch/catch.hpp"
-#include "../src/Node.h"
 #include "../src/Graph.h"
 #include <math.h> 
+#include <iostream>
+#include <vector>
+#include <string>
+#include <sstream>
+#include <fstream>
+#include <filesystem>
+#include <cmath>
+#include <iostream>
 
 bool dist(double d1, double d2) {
     return fabs(d1-d2) < 50;
@@ -29,10 +36,27 @@ TEST_CASE("test_addAirports") {
 }
 
 TEST_CASE("test_GraphConstructor") {
-    Graph g = Graph("test_airports.dat");
+    string filename = "../test_airports.dat";
+    fstream fs(filename);
+    cout << "bonjour" << endl;
+    char c;
+    while (fs.get(c)) cout << endl;
+    cout << endl;
+    fs.close();
+    cout << "salut" << endl;
+    Graph g = Graph(filename);
     
-    REQUIRE(g.getGraph()[1]->IATA_ == "AAA");
-    REQUIRE(g.getGraph()[2]->ICAO_ == "BBBB");
+    cout << g.hasNode(1) << endl;
+    cout << g.hasNode(2) << endl;
+    cout << g.hasNode(3) << endl;
+    cout << endl;
+    cout << endl;
+    cout << endl;
+    cout << endl;
+    REQUIRE(true);
+    // REQUIRE_NOTHROW(g.getGraph()[1]->IATA_);
+    // REQUIRE(g.getGraph()[1]->IATA_ == "AAA");
+    // REQUIRE(g.getGraph()[2]->ICAO_ == "BBBB");
 }
 
 TEST_CASE("test_Dijkstras") {

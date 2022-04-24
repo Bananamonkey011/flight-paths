@@ -1,5 +1,6 @@
 #include "Graph.h"
 #include <queue>
+#include <iostream>
 using namespace std;
 
 Graph::Graph() { // TODO(): HANDLE INCORRECT DATA
@@ -31,6 +32,7 @@ Graph::Graph() { // TODO(): HANDLE INCORRECT DATA
 Graph::Graph(string file) {
     string datapath = file;
     fstream datafile(datapath);
+    // cout << "hello" << endl;
     while (datafile.is_open() && datafile.good()) {
         string idx, name, loc, country, IATA, ICAO, lat, lon, alt, temp;
         getline(datafile, idx, ',');     // index
@@ -47,11 +49,29 @@ Graph::Graph(string file) {
         getline(datafile, temp, ',');    // Database timezone
         getline(datafile, temp, ',');    // type of station
         getline(datafile, temp);         // source
-
+        // cout << idx << endl;
+        // cout << name << endl;
+        // cout << loc << endl;
+        // cout << country << endl;
+        // cout << IATA << endl;
+        // cout << ICAO << endl;
+        // cout << lat << endl;
+        // cout << lon << endl;
+        // cout << alt << endl;
+        // cout << temp << endl;
         // create node using given information
-        Node *n = new Node(stoi(idx), IATA, ICAO, stoi(lat), stoi(lon), stoi(alt));
+        // cout << "hi" << endl;
+        Node* n = new Node(stoi(idx), IATA, ICAO, stoi(lat), stoi(lon), stoi(alt));
         graph.insert(std::make_pair(stoi(idx), n));
     }
+}
+
+Node* Graph::getNode(int key) {
+    return graph[key];
+}
+
+bool Graph::hasNode(int key) {
+    return graph.contains(key);
 }
 
 void Graph::AddEdges() {
@@ -68,7 +88,6 @@ void Graph::AddEdges() {
         getline(datafile, cs, ',');
         getline(datafile, stops, ',');
         getline(datafile, equip);
-
         graph[stoi(sap_id)]->addAirport(graph[stoi(dap_id)], distance(graph[stoi(sap_id)], graph[stoi(dap_id)]));
     }
 }
@@ -87,7 +106,6 @@ void Graph::AddEdges(string file) {
         getline(datafile, cs, ',');
         getline(datafile, stops, ',');
         getline(datafile, equip);
-
         graph[stoi(sap_id)]->addAirport(graph[stoi(dap_id)], distance(graph[stoi(sap_id)], graph[stoi(dap_id)]));
     }
 }
