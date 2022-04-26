@@ -11,8 +11,20 @@
 #include <cmath>
 #include <iostream>
 
-bool dist(double d1, double d2) {
-    return fabs(d1-d2) < 50;
+double Graph::distance(double lat, double lon, double lat2, double lon2) {
+    double lat1 = M_PI / 180 * lat;
+    double long1 = M_PI / 180 * lon;
+    double lat2 = M_PI / 180 * lat2;
+    double long2 = M_PI / 180 * lon2;
+
+    double ans = pow(sin((lat2 - lat1) / 2), 2) + cos(lat1) * cos(lat2) * pow(sin((long2 - long1) / 2), 2);
+
+    ans = 2 * asin(sqrt(ans));
+
+    double R = 3956;
+    ans = ans * R;
+
+    return ans;
 }
 
 TEST_CASE("test_addAirports") {
@@ -36,32 +48,18 @@ TEST_CASE("test_addAirports") {
 }
 
 TEST_CASE("test_GraphConstructor") {
-    string filename = "../test_airports.dat";
-    fstream fs(filename);
-    cout << "bonjour" << endl;
-    char c;
-    while (fs.get(c)) cout << endl;
-    cout << endl;
-    fs.close();
-    cout << "salut" << endl;
+    string filename = "tests/test_airports.dat";
     Graph g = Graph(filename);
     
-    cout << g.hasNode(1) << endl;
-    cout << g.hasNode(2) << endl;
-    cout << g.hasNode(3) << endl;
-    cout << endl;
-    cout << endl;
-    cout << endl;
-    cout << endl;
-    REQUIRE(true);
-    // REQUIRE_NOTHROW(g.getGraph()[1]->IATA_);
-    // REQUIRE(g.getGraph()[1]->IATA_ == "AAA");
-    // REQUIRE(g.getGraph()[2]->ICAO_ == "BBBB");
+    REQUIRE(g.getGraph()[1]->IATA_ == "AAA");
+    REQUIRE(g.getGraph()[2]->ICAO_ == "BBBB");
 }
 
 TEST_CASE("test_Dijkstras") {
-    Graph g = Graph("test_airports.dat");
-    g.AddEdges("test_routes.dat");
+    string nodes_filename = "tests/test_airports.dat";
+    Graph g = Graph(nodes_filename);
+    string edges_filename = "tests/test_routes.dat";
+    g.AddEdges(edges_filename);
 
     double dist1 = g.Dijkstra(1, 2);
     double dist2 = g.Dijkstra(1, 3);

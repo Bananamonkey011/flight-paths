@@ -8,8 +8,8 @@ tests: bin/tests
 bin/exec: ./main.cc src/Graph.cc src/Node.cc  src/Graph.h src/Node.h
 	$(CXX) $(CXXFLAGS) ./main.cc src/Graph.cc src/Node.cc -o $@
 
-bin/tests: ./tests/unitTests.cc cs225/catch/catch.hpp src/Graph.cc src/Node.cc src/Graph.h src/Node.h
-	$(CXX) $(CXXFLAGS) ./tests/unitTests.cc src/Graph.cc src/Node.cc -o $@
+bin/tests: ./tests/tests.cc cs225/catch/catch.hpp src/Graph.cc src/Node.cc src/Graph.h src/Node.h
+	$(CXX) $(CXXFLAGS) ./tests/tests.cc src/Graph.cc src/Node.cc -o $@
 
 
 .DEFAULT_GOAL := exec
