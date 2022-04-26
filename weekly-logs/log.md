@@ -49,3 +49,16 @@ We implemented a Dijkstra algorithm rather than a BFS since we were not sure how
 ### Next Weeks Plans:
 We hope to be done with our Makefile and to have implemented our BFS traversal code. We also hope to fully debug any issues our Dijkstra may have (unknown at the moment since we weren't able to extensively test) and to test edge cases with our test cases. We hope to make our test cases more robust and to have the test cases all our functions.
 
+## Week of 04/17 - 04/24
+### Goals: 
+Our goals for this week was to get our makefie running and to create test cases for our code.
+
+### Progress:
+
+This week, all three of us met up to work together on the code. We liveshared the code on Nihal's computer and worked on gettingt he Makefile to work. We finished the makefile and then transitioned to testing our code where we ran into issues getting our Graph class to read file input in the test cases, while it still worked in the main. We eventually figured out it was a file pathing issue and were able to resolve it and test all our code.
+
+### Problems: 
+We ran into issues with the makefile which we were able to resolve and also ran into issues with file pathing and how file reads work with different file paths. Currently we have no issues in our code progress.
+
+### Next Weeks Plans:
+We hope to be done with our BFS algorithm and to start working on our Iterative Deepening DFS algorithm. We also hope to get a basic terminal interaction set up so that the user can interact with our Graph Class in a significant way and can enter two airports to find the shortest path between. We also hope to continue to make our test cases more robust.
