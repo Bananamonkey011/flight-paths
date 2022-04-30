@@ -27,6 +27,16 @@ double distance(Node *a1, Node *a2) {
     return ans;
 }
 
+TEST_CASE("test_GraphConstructor") {
+    string filename = "tests/test_airports.dat";
+    Graph g = Graph(filename);
+    
+    REQUIRE(g.getGraph()[1]->IATA_ == "AAA");
+    REQUIRE(g.getGraph()[2]->ICAO_ == "BBBB");
+    REQUIRE(g.getGraph()[3]->IATA_ == "CCC");
+    REQUIRE(g.getGraph()[4]->ICAO_ == "DDDD");
+}
+
 TEST_CASE("test_addAirports") {
     Node n = Node();
     Node* a = new Node();
@@ -45,14 +55,6 @@ TEST_CASE("test_addAirports") {
     delete a;
     delete b;
     delete c;
-}
-
-TEST_CASE("test_GraphConstructor") {
-    string filename = "tests/test_airports.dat";
-    Graph g = Graph(filename);
-    
-    REQUIRE(g.getGraph()[1]->IATA_ == "AAA");
-    REQUIRE(g.getGraph()[2]->ICAO_ == "BBBB");
 }
 
 TEST_CASE("test_Dijkstras_simple") {
@@ -79,6 +81,17 @@ TEST_CASE("test_Dijkstras_medium") {
     double dist1 = g.Dijkstra(1, 2);
 
     REQUIRE(dist1 == distance(g.getNode(1), g.getNode(3)) + distance(g.getNode(2), g.getNode(3)));
+}
+
+TEST_CASE("test_BFS_hard") {
+    string nodes_filename = "tests/test_airports.dat";
+    Graph g = Graph(nodes_filename);
+    string edges_filename = "tests/test_routes_hard.dat";
+    g.AddEdges(edges_filename);
+
+    double dist1 = g.BFS(1, 2);
+
+    REQUIRE(distance(g.getNode(1), g.getNode(3)) + distance(g.getNode(1), g.getNode(4)) + distance(g.getNode(3), g.getNode(2)) == dist1);
 }
 
 TEST_CASE("test_Dijkstras_hard") {

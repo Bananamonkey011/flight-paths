@@ -32,7 +32,6 @@ Graph::Graph() { // TODO(): HANDLE INCORRECT DATA
 Graph::Graph(string file) {
     string datapath = file;
     fstream datafile(datapath);
-    // cout << "hello" << endl;
     while (datafile.is_open() && datafile.good()) {
         string idx, name, loc, country, IATA, ICAO, lat, lon, alt, temp;
         getline(datafile, idx, ',');     // index
@@ -49,18 +48,6 @@ Graph::Graph(string file) {
         getline(datafile, temp, ',');    // Database timezone
         getline(datafile, temp, ',');    // type of station
         getline(datafile, temp);         // source
-        // cout << idx << endl;
-        // cout << name << endl;
-        // cout << loc << endl;
-        // cout << country << endl;
-        // cout << IATA << endl;
-        // cout << ICAO << endl;
-        // cout << lat << endl;
-        // cout << lon << endl;
-        // cout << alt << endl;
-        // cout << temp << endl;
-        // create node using given information
-        // cout << "hi" << endl;
         Node* n = new Node(stoi(idx), IATA, ICAO, stoi(lat), stoi(lon), stoi(alt));
         graph.insert(std::make_pair(stoi(idx), n));
     }
@@ -112,6 +99,46 @@ void Graph::AddEdges(string file) {
 
 map <int, Node*>& Graph::getGraph() {
     return graph;
+}
+
+double Graph::BFS(int depart_id, int arrival_id) {
+    // Mark all the vertices as not visited
+    int curr_id = depart_id;
+    map<int, bool> visited;
+    // for (size_t i = 0; i < graph.size(); i++) visited.push_back(false);
+ 
+    // Create a queue for BFS
+    queue<pair<int, double>> q;
+ 
+    // Mark the current node as visited and enqueue it
+    visited[curr_id] = true;
+    q.push(pair<int, double>(curr_id, 0));
+    bool found = false;
+    int distance = 0;
+ 
+    while(!q.empty() && !found)
+    {
+        // Dequeue a vertex from queue and print it
+        curr_id = q.front().first;
+        cout << "Now on Node: " << curr_id << endl;
+        distance += q.front().second;
+        if (curr_id == arrival_id) return distance;
+        q.pop();
+ 
+        // Get all adjacent vertices of the dequeued
+        // vertex s. If a adjacent has not been visited,
+        // then mark it visited and enqueue it
+        for (auto neighbor: graph[curr_id]->neighbors)
+        {
+            if (!visited[neighbor.first->id_])
+            {
+                visited[neighbor.first->id_] = true;
+                q.push(pair<int, double>(neighbor.first->id_, neighbor.second));
+            }
+        }
+    }
+
+    return -1;
 }
 
 double Graph::Dijkstra(int depart_id, int arrival_id) {

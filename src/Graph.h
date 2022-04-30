@@ -18,6 +18,7 @@ public:
     Graph(string file);
     void AddEdges();
     void AddEdges(string file);
+    double BFS(int depart_id, int arrival_id);
     double Dijkstra(int depart_id, int arrival_id);
     Node* getNode(int key);
     bool hasNode(int key);
