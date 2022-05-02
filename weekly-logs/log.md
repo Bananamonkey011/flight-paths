@@ -62,3 +62,17 @@ We ran into issues with the makefile which we were able to resolve and also ran 
 
 ### Next Weeks Plans:
 We hope to be done with our BFS algorithm and to start working on our Iterative Deepening DFS algorithm. We also hope to get a basic terminal interaction set up so that the user can interact with our Graph Class in a significant way and can enter two airports to find the shortest path between. We also hope to continue to make our test cases more robust.
+
+## Week of 04/25 - 5/01
+### Goals: 
+This week, we wanted to work on cleaning up the datafile before creating a Graph from this faulty data, and developing our BFS algorithm.
+
+### Progress:
+
+This week, Manan was unfortunately sick, but we were able to help him out with some of the tasks we had split up at the start of the week. 
+
+### Problems: 
+Our primary issues came from translating the file data to our graph since the data was quite messy, but it is now working as we had expected with both the nodes and edges in place.
+
+### Next Weeks Plans:
+This week, we want to develop our Iterative Depth-First Search algorithm, and also have our test file ready to go.
