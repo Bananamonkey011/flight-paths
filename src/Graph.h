@@ -27,5 +27,6 @@ public:
 
 private:
     map<int, Node*> graph;
+    bool isNbr(string nbr);
     double distance(Node* a1, Node* a2);
 };

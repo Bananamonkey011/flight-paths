@@ -5,10 +5,9 @@
 using namespace std;
 
 int main() {
-    cout<<"Hello, World!"<<endl;
-    Graph g = Graph("tests/test_airports.dat");
-    
-    cout << (g.getGraph()[1]->IATA_ == "AAA") << endl;
-    cout << (g.getGraph()[2]->ICAO_ == "BBBB") << endl;
+    cout << "Hello, World!" << endl;
+    Graph g = Graph();
+    g.AddEdges();
+    cout << g.hasNode(1393) << endl;
     return 0;
 }

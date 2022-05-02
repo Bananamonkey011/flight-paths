@@ -4,7 +4,7 @@
 using namespace std;
 
 Graph::Graph() { // TODO(): HANDLE INCORRECT DATA
-    string datapath = "airports.dat";
+    string datapath = "src/airports.dat";
     fstream datafile(datapath);
     while (datafile.is_open() && datafile.good()) {
         string idx, name, loc, country, IATA, ICAO, lat, lon, alt, temp;
@@ -24,14 +24,18 @@ Graph::Graph() { // TODO(): HANDLE INCORRECT DATA
         getline(datafile, temp);         // source
 
         // create node using given information
-        Node *n = new Node(stoi(idx), IATA, ICAO, stoi(lat), stoi(lon), stoi(alt));
-        graph.insert(std::make_pair(stoi(idx), n));
+        try {
+            int alt_ = isNbr(alt) ? stoi(alt) : -1;
+            if (IATA != "\\N" && ICAO != "\\N") {
+                Node* n = new Node(stoi(idx), IATA, ICAO, stoi(lat), stoi(lon), alt_);
+                graph.insert(std::make_pair(stoi(idx), n));
+            }
+        } catch (std::invalid_argument) { continue; }
     }
 }
 
 Graph::Graph(string file) {
-    string datapath = file;
-    fstream datafile(datapath);
+    fstream datafile(file);
     while (datafile.is_open() && datafile.good()) {
         string idx, name, loc, country, IATA, ICAO, lat, lon, alt, temp;
         getline(datafile, idx, ',');     // index
@@ -48,9 +52,21 @@ Graph::Graph(string file) {
         getline(datafile, temp, ',');    // Database timezone
         getline(datafile, temp, ',');    // type of station
         getline(datafile, temp);         // source
-        Node* n = new Node(stoi(idx), IATA, ICAO, stoi(lat), stoi(lon), stoi(alt));
-        graph.insert(std::make_pair(stoi(idx), n));
+
+        try {
+            int alt_ = isNbr(alt) ? stoi(alt) : -1;
+            if (IATA != "\\N" && ICAO != "\\N") {
+                Node* n = new Node(stoi(idx), IATA, ICAO, stoi(lat), stoi(lon), alt_);
+                graph.insert(std::make_pair(stoi(idx), n));
+            }
+        } catch (std::invalid_argument) { continue; }
     }
+}
+
+bool Graph::isNbr(string nbr) {
+    for (size_t i = 0; i < nbr.size(); i++)
+        if (nbr[i] < '0' || nbr[i] > '9') return false;
+    return true;
 }
 
 Node* Graph::getNode(int key) {
@@ -75,13 +91,14 @@ void Graph::AddEdges() {
         getline(datafile, cs, ',');
         getline(datafile, stops, ',');
         getline(datafile, equip);
-        graph[stoi(sap_id)]->addAirport(graph[stoi(dap_id)], distance(graph[stoi(sap_id)], graph[stoi(dap_id)]));
+
+        if (isNbr(sap_id) && isNbr(dap_id))
+            graph[stoi(sap_id)]->addAirport(graph[stoi(dap_id)], distance(graph[stoi(sap_id)], graph[stoi(dap_id)]));
     }
 }
 
 void Graph::AddEdges(string file) {
-    string path = file;
-    fstream datafile(path);
+    fstream datafile(file);
     while (datafile.is_open() && datafile.good()) {
         string al, al_id, sap, sap_id, dap, dap_id, cs, stops, equip;
         getline(datafile, al, ',');
@@ -93,7 +110,8 @@ void Graph::AddEdges(string file) {
         getline(datafile, cs, ',');
         getline(datafile, stops, ',');
         getline(datafile, equip);
-        graph[stoi(sap_id)]->addAirport(graph[stoi(dap_id)], distance(graph[stoi(sap_id)], graph[stoi(dap_id)]));
+        if (isNbr(sap_id) && isNbr(dap_id))
+            graph[stoi(sap_id)]->addAirport(graph[stoi(dap_id)], distance(graph[stoi(sap_id)], graph[stoi(dap_id)]));
     }
 }
 
