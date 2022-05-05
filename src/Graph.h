@@ -20,6 +20,7 @@ public:
     void AddEdges(string file);
     double BFS(int depart_id, int arrival_id);
     double Dijkstra(int depart_id, int arrival_id);
+    double IDDFS(int depart_id, int arrival_id);
     Node* getNode(int key);
     bool hasNode(int key);
 
@@ -27,6 +28,7 @@ public:
 
 private:
     map<int, Node*> graph;
+    double _IDDFS(Node* cur, int arrival_id, int limit, int length);
     bool isNbr(string nbr);
     double distance(Node* a1, Node* a2);
 };

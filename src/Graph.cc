@@ -212,3 +212,28 @@ double Graph::distance(Node *a1, Node *a2) {
 
     return ans;
 }
+
+double Graph::IDDFS(int depart_id, int arrival_id){
+    for(int i = 0; i < graph.size(); i++)
+    {
+        double val = _IDDFS(graph.find(depart_id)->second, arrival_id, i, 0);
+        if(val != -1.0){
+            return val;
+        }
+    }
+    return -1.0;
+}
+
+double Graph::_IDDFS(Node* cur, int arrival_id, int limit , int length)
+{
+    if(cur == graph.find(arrival_id)->second) return length;
+
+    if(limit <= 0) return -1.0;
+
+    for(auto i = cur->neighbors.begin(); i != cur->neighbors.end(); i++)
+    {
+        double val = _IDDFS(i->first, arrival_id, limit-1, length+distance(cur, i->first));
+        if(val != -1) return val;
+    }
+    return -1;
+}
