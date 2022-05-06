@@ -76,3 +76,16 @@ Our primary issues came from translating the file data to our graph since the da
 
 ### Next Weeks Plans:
 This week, we want to develop our Iterative Depth-First Search algorithm, and also have our test file ready to go.
+
+## Week of 05/01 - 5/06
+### Goals: 
+This week, we wanted to finish the project by testing our Iterative Deepening DFS code, fleshing out our comments and our Github for running information and to create our main function.
+
+### Progress:
+We finished the IDDFS code anf the BFS code, as well as built test cases. We then built the main method and the slides and are finishing up the video and the other deliverables. Everything will be done by dnoe by 12:00 PM on May 6th.
+
+### Problems: 
+Our primary issue was time conflict since a lot of us had finals this week as well as we had some concerns about our algorithms meeting the scope of the project.
+
+### Next Weeks Plans:
+N/A
