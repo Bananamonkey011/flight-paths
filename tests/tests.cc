@@ -133,3 +133,41 @@ TEST_CASE("test_BFS_hard") {
 
     REQUIRE(distance(g.getNode(1), g.getNode(2))+distance(g.getNode(2), g.getNode(4)) == dist1);
 }
+
+TEST_CASE("test_IDDFS_simple") {
+    string nodes_filename = "tests/test_airports_BFS.dat";
+    Graph g = Graph(nodes_filename);
+    string edges_filename = "tests/test_routes_simple_BFS.dat";
+    g.AddEdges(edges_filename);
+
+    double dist1 = g.IDDFS(1, 3);
+    double dist2 = g.IDDFS(1, 5);
+    double dist3 = g.IDDFS(1, 4);
+
+    REQUIRE(distance(g.getNode(1), g.getNode(3)) == dist1);
+    REQUIRE(distance(g.getNode(1), g.getNode(5)) == dist2);
+    REQUIRE(distance(g.getNode(1), g.getNode(2))+distance(g.getNode(2), g.getNode(4)) == dist3);
+}
+
+TEST_CASE("test_IDDFS_medium") {
+    string nodes_filename = "tests/test_airports_BFS.dat";
+    Graph g = Graph(nodes_filename);
+    string edges_filename = "tests/test_routes_medium_BFS.dat";
+    g.AddEdges(edges_filename);
+
+    double dist1 = g.IDDFS(1, 5);
+    double dist2 = g.IDDFS(1, 2);
+
+    REQUIRE(distance(g.getNode(1), g.getNode(5)) == dist1);
+    REQUIRE(distance(g.getNode(1), g.getNode(2)) == dist2);
+}
+
+TEST_CASE("test_IDDFS_hard") {
+    string nodes_filename = "tests/test_airports_BFS.dat";
+    Graph g = Graph(nodes_filename);
+    string edges_filename = "tests/test_routes_hard_BFS.dat";
+    g.AddEdges(edges_filename);
+
+    double dist1 = g.IDDFS(1, 4);
+
+    REQUIRE(distance(g.getNode(1), g.getNode(2))+distance(g.getNode(2), g.getNode(4)) == dist1);
