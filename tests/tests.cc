@@ -83,17 +83,6 @@ TEST_CASE("test_Dijkstras_medium") {
     REQUIRE(dist1 == distance(g.getNode(1), g.getNode(3)) + distance(g.getNode(2), g.getNode(3)));
 }
 
-TEST_CASE("test_BFS_hard") {
-    string nodes_filename = "tests/test_airports.dat";
-    Graph g = Graph(nodes_filename);
-    string edges_filename = "tests/test_routes_hard.dat";
-    g.AddEdges(edges_filename);
-
-    double dist1 = g.BFS(1, 2);
-
-    REQUIRE(distance(g.getNode(1), g.getNode(3)) + distance(g.getNode(1), g.getNode(4)) + distance(g.getNode(3), g.getNode(2)) == dist1);
-}
-
 TEST_CASE("test_Dijkstras_hard") {
     string nodes_filename = "tests/test_airports.dat";
     Graph g = Graph(nodes_filename);
@@ -103,4 +92,44 @@ TEST_CASE("test_Dijkstras_hard") {
     double dist1 = g.Dijkstra(1, 2);
 
     REQUIRE(dist1 == distance(g.getNode(1), g.getNode(3)) + distance(g.getNode(2), g.getNode(3)));
+}
+
+
+TEST_CASE("test_BFS_simple") {
+    string nodes_filename = "tests/test_airports_BFS.dat";
+    Graph g = Graph(nodes_filename);
+    string edges_filename = "tests/test_routes_simple_BFS.dat";
+    g.AddEdges(edges_filename);
+
+    double dist1 = g.BFS(1, 3);
+    double dist2 = g.BFS(1, 5);
+    double dist3 = g.BFS(1, 4);
+
+    REQUIRE(distance(g.getNode(1), g.getNode(3)) == dist1);
+    REQUIRE(distance(g.getNode(1), g.getNode(5)) == dist2);
+    REQUIRE(distance(g.getNode(1), g.getNode(2))+distance(g.getNode(2), g.getNode(4)) == dist3);
+}
+
+TEST_CASE("test_BFS_medium") {
+    string nodes_filename = "tests/test_airports_BFS.dat";
+    Graph g = Graph(nodes_filename);
+    string edges_filename = "tests/test_routes_medium_BFS.dat";
+    g.AddEdges(edges_filename);
+
+    double dist1 = g.BFS(1, 5);
+    double dist2 = g.BFS(1, 2);
+
+    REQUIRE(distance(g.getNode(1), g.getNode(5)) == dist1);
+    REQUIRE(distance(g.getNode(1), g.getNode(2)) == dist2);
+}
+
+TEST_CASE("test_BFS_hard") {
+    string nodes_filename = "tests/test_airports_BFS.dat";
+    Graph g = Graph(nodes_filename);
+    string edges_filename = "tests/test_routes_hard_BFS.dat";
+    g.AddEdges(edges_filename);
+
+    double dist1 = g.BFS(1, 4);
+
+    REQUIRE(distance(g.getNode(1), g.getNode(2))+distance(g.getNode(2), g.getNode(4)) == dist1);
 }
