@@ -1,6 +1,7 @@
 #include "Graph.h"
 #include <queue>
 #include <iostream>
+#include <stack>
 using namespace std;
 
 Graph::Graph() { // TODO(): HANDLE INCORRECT DATA
@@ -225,7 +226,7 @@ double Graph::IDDFS(int depart_id, int arrival_id){
 }
 
 double Graph::_IDDFS(Node* cur, int arrival_id, int limit , int length)
-{
+{   
     if(cur == graph.find(arrival_id)->second) return length;
 
     if(limit <= 0) return -1.0;
@@ -237,3 +238,26 @@ double Graph::_IDDFS(Node* cur, int arrival_id, int limit , int length)
     }
     return -1;
 }
+
+double Graph::_IDDFS(Node* start, int arrival_id, int lim, int len)
+{   
+    stack<pair<pair<Node*,int>, int>> nodes;
+    nodes.push(make_pair(make_pair(start, len), lim)); 
+
+    while(nodes.size() != 0)
+    {
+        Node* cur = nodes.top()->first->first;
+        int length = nodes.top()->first->second;
+        int limit = nodes.top()->second;
+        for(auto i = cur->neighbors.begin(); i != cur->neighbors.end(); i++)
+        {
+            if(cur == graph.find(arrival_id)->second) return length;
+
+            if(lim > 0) nodes.push(make_pair(make_pair(i->first, length+distance(cur, i->first)),limit-1));
+        }
+    }
+    return -1;
+}
+
+
+    

@@ -15,6 +15,10 @@
         "algorithm": "cpp",
         "map": "cpp",
         "__locale": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "utility": "cpp",
+        "regex": "cpp",
+        "xlocale": "cpp",
+        "xstring": "cpp"
     }
 }
