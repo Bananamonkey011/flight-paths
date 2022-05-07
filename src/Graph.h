@@ -28,7 +28,7 @@ public:
 
 private:
     map<int, Node*> graph;
-    double _IDDFS(Node* cur, int arrival_id, int limit, int length);
+    double _IDDFS(Node* cur, int arrival_id, int limit, double length);
     bool isNbr(string nbr);
     double distance(Node* a1, Node* a2);
 };

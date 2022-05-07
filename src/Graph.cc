@@ -128,20 +128,19 @@ double Graph::BFS(int depart_id, int arrival_id) {
  
     // Create a queue for BFS
     queue<pair<int, double>> q;
+    pair<int, double> curr_front;
  
     // Mark the current node as visited and enqueue it
     visited[curr_id] = true;
     q.push(pair<int, double>(curr_id, 0));
     bool found = false;
-    int distance = 0;
  
     while(!q.empty() && !found)
     {
         // Dequeue a vertex from queue and print it
-        curr_id = q.front().first;
-        cout << "Now on Node: " << curr_id << endl;
-        distance += q.front().second;
-        if (curr_id == arrival_id) return distance;
+        curr_front = q.front();
+        curr_id = curr_front.first;
+        if (curr_id == arrival_id) return curr_front.second;
         q.pop();
  
         // Get all adjacent vertices of the dequeued
@@ -152,7 +151,7 @@ double Graph::BFS(int depart_id, int arrival_id) {
             if (!visited[neighbor.first->id_])
             {
                 visited[neighbor.first->id_] = true;
-                q.push(pair<int, double>(neighbor.first->id_, neighbor.second));
+                q.push(pair<int, double>(neighbor.first->id_, curr_front.second + neighbor.second));
             }
         }
     }
@@ -215,7 +214,7 @@ double Graph::distance(Node *a1, Node *a2) {
 }
 
 double Graph::IDDFS(int depart_id, int arrival_id){
-    for(int i = 0; i < graph.size(); i++)
+    for (size_t i = 0; i < graph.size(); i++)
     {
         double val = _IDDFS(graph.find(depart_id)->second, arrival_id, i, 0);
         if(val != -1.0){
@@ -225,7 +224,7 @@ double Graph::IDDFS(int depart_id, int arrival_id){
     return -1.0;
 }
 
-double Graph::_IDDFS(Node* cur, int arrival_id, int limit , int length)
+double Graph::_IDDFS(Node* cur, int arrival_id, int limit , double length)
 {   
     if(cur == graph.find(arrival_id)->second) return length;
 
@@ -239,25 +238,22 @@ double Graph::_IDDFS(Node* cur, int arrival_id, int limit , int length)
     return -1;
 }
 
-double Graph::_IDDFS(Node* start, int arrival_id, int lim, int len)
-{   
-    stack<pair<pair<Node*,int>, int>> nodes;
-    nodes.push(make_pair(make_pair(start, len), lim)); 
+// double Graph::_IDDFS(Node* start, int arrival_id, int lim, int len)
+// {   
+//     stack<pair<pair<Node*,int>, int>> nodes;
+//     nodes.push(make_pair(make_pair(start, len), lim)); 
 
-    while(nodes.size() != 0)
-    {
-        Node* cur = nodes.top()->first->first;
-        int length = nodes.top()->first->second;
-        int limit = nodes.top()->second;
-        for(auto i = cur->neighbors.begin(); i != cur->neighbors.end(); i++)
-        {
-            if(cur == graph.find(arrival_id)->second) return length;
+//     while(nodes.size() != 0)
+//     {
+//         Node* cur = nodes.top()->first->first;
+//         int length = nodes.top()->first->second;
+//         int limit = nodes.top()->second;
+//         for(auto i = cur->neighbors.begin(); i != cur->neighbors.end(); i++)
+//         {
+//             if(cur == graph.find(arrival_id)->second) return length;
 
-            if(lim > 0) nodes.push(make_pair(make_pair(i->first, length+distance(cur, i->first)),limit-1));
-        }
-    }
-    return -1;
-}
-
-
-    
+//             if(lim > 0) nodes.push(make_pair(make_pair(i->first, length+distance(cur, i->first)),limit-1));
+//         }
+//     }
+//     return -1;
+// }

@@ -171,3 +171,4 @@ TEST_CASE("test_IDDFS_hard") {
     double dist1 = g.IDDFS(1, 4);
 
     REQUIRE(distance(g.getNode(1), g.getNode(2))+distance(g.getNode(2), g.getNode(4)) == dist1);
+}
