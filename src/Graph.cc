@@ -2,6 +2,7 @@
 #include <queue>
 #include <iostream>
 #include <stack>
+#include <set>
 using namespace std;
 
 Graph::Graph() { // TODO(): HANDLE INCORRECT DATA
@@ -216,7 +217,7 @@ double Graph::distance(Node *a1, Node *a2) {
 double Graph::IDDFS(int depart_id, int arrival_id){
     for (size_t i = 0; i < graph.size(); i++)
     {
-        double val = _IDDFS(graph.find(depart_id)->second, arrival_id, i, 0);
+        double val = _IIDDFS(graph.find(depart_id)->second, arrival_id, i, 0);
         if(val != -1.0){
             return val;
         }
@@ -224,7 +225,7 @@ double Graph::IDDFS(int depart_id, int arrival_id){
     return -1.0;
 }
 
-double Graph::_IDDFS(Node* cur, int arrival_id, int limit , double length)
+double Graph::_RIDDFS(Node* cur, int arrival_id, int limit , double length)
 {   
     if(cur == graph.find(arrival_id)->second) return length;
 
@@ -232,28 +233,29 @@ double Graph::_IDDFS(Node* cur, int arrival_id, int limit , double length)
 
     for(auto i = cur->neighbors.begin(); i != cur->neighbors.end(); i++)
     {
-        double val = _IDDFS(i->first, arrival_id, limit-1, length+distance(cur, i->first));
+        double val = _RIDDFS(i->first, arrival_id, limit-1, length+distance(cur, i->first));
         if(val != -1) return val;
     }
     return -1;
 }
 
-// double Graph::_IDDFS(Node* start, int arrival_id, int lim, int len)
-// {   
-//     stack<pair<pair<Node*,int>, int>> nodes;
-//     nodes.push(make_pair(make_pair(start, len), lim)); 
+double Graph::_IIDDFS(Node* start, int arrival_id, int lim, double len)
+{   
+    stack<pair<pair<Node*,double>, int>> nodes;
+    nodes.push(make_pair(make_pair(start, len), lim)); 
 
-//     while(nodes.size() != 0)
-//     {
-//         Node* cur = nodes.top()->first->first;
-//         int length = nodes.top()->first->second;
-//         int limit = nodes.top()->second;
-//         for(auto i = cur->neighbors.begin(); i != cur->neighbors.end(); i++)
-//         {
-//             if(cur == graph.find(arrival_id)->second) return length;
+    while(nodes.size() != 0)
+    {
+        Node* cur = nodes.top().first.first;
+        double length = nodes.top().first.second;
+        if(cur == graph.find(arrival_id)->second) return length;
 
-//             if(lim > 0) nodes.push(make_pair(make_pair(i->first, length+distance(cur, i->first)),limit-1));
-//         }
-//     }
-//     return -1;
-// }
+        int limit = nodes.top().second;
+        nodes.pop();
+        for(auto i = cur->neighbors.begin(); i != cur->neighbors.end(); i++)
+        {
+            if(limit > 0) nodes.push(make_pair(make_pair(i->first, length+distance(cur, i->first)),limit-1));
+        }
+    }
+    return -1.0;
+}
