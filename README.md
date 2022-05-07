@@ -1,7 +1,7 @@
-## smananj2-arulhv2-nihals3
+## Github Organization
+***Code*** 
+1. All of our code is in the folder called src. <br>
+2. 
 
-# Github Organization
-
-
-# Running the Code
+## Running the Code
 
